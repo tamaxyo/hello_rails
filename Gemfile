@@ -57,3 +57,6 @@ group :development do
   gem 'hirb'
   gem 'hirb-unicode'
 end
+
+# Use haml for template engine
+gem 'haml-rails'
