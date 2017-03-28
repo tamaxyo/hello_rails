@@ -1,5 +1,5 @@
-%h1 Editing Entry
+%h1= "Editing Entry: #{@blog.title}"
 = render 'form', entry: @entry
-= link_to 'Show', @entry
+= link_to 'Show', blog_entries_path(@blog, @entry)
 |
-= link_to 'Back', entries_path
+= link_to 'Back', blog_entries_path(@blog)
