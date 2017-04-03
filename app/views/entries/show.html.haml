@@ -11,3 +11,19 @@
 = link_to 'Edit', edit_blog_entry_path(@blog, @entry)
 |
 = link_to 'Back', blog_entries_path(@blog)
+
+%hr
+
+%h1 Listing Comments
+%table
+  %thead
+    %tr
+      %th Body
+      %th{:colspan => "3"}
+  %tbody
+    - @entry.comments.each do |comment|
+      %tr
+        %td= comment.body
+        %td= comment.status
+        %td= link_to 'Destroy', blog_entry_comment_path(@blog, @entry, comment), method: :delete, data: { confirm: 'Are you sure?' }
+%br/
