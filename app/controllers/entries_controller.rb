@@ -2,13 +2,6 @@ class EntriesController < ApplicationController
   before_action :set_entry, only: [:show, :edit, :update, :destroy]
   before_action :find_blog
 
-  # GET /entries
-  # GET /entries.json
-  def index
-    #    @entries = Entry.where(:blog_id => @blog.id)
-    redirect_to blog_path(@blog)
-  end
-
   # GET /entries/1
   # GET /entries/1.json
   def show
