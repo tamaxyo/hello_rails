@@ -13,6 +13,7 @@ class EntriesController < ApplicationController
   # GET /entries/1.json
   def show
     redirect_to blog_path(@blog) unless @blog.id == @entry.blog_id
+    @comment = Comment.new
   end
 
   # GET /entries/new
