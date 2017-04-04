@@ -24,7 +24,10 @@
     - @entry.comments.each do |comment|
       %tr
         %td= comment.body
-        %td= comment.status
+        - if comment.approved?
+          %td
+        - else
+          %td= comment.status
         %td= link_to 'Destroy', blog_entry_comment_path(@blog, @entry, comment), method: :delete, data: { confirm: 'Are you sure?' }
 %br/
 
