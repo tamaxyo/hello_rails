@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   resources :blogs do
     resources :entries do
-      resources :comments
+      resources :comments do
+        member do
+          get :approve
+        end
+      end
     end
   end
   

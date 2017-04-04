@@ -4,4 +4,8 @@ class Comment < ApplicationRecord
   def approved?
     return self.status == "approved"
   end
+
+  def approve
+    self.update_attribute(:status, "approved")
+  end
 end

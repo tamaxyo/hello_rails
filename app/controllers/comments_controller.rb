@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  before_action :set_comment, only: [:show, :edit, :update, :destroy]
+  before_action :set_comment, only: [:show, :edit, :update, :destroy, :approve]
   before_action :find_blog
   before_action :find_entry
   
@@ -64,6 +64,11 @@ class CommentsController < ApplicationController
       format.html { redirect_to [@blog, @entry], notice: 'Comment was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def approve
+    @comment.approve
+    redirect_to blog_entry_path(@blog, @entry)
   end
 
   private

@@ -27,7 +27,7 @@
         - if comment.approved?
           %td
         - else
-          %td= comment.status
+          %td= link_to "#{comment.status}", approve_blog_entry_comment_path(@blog, @entry, comment), method: :get
         %td= link_to 'Destroy', blog_entry_comment_path(@blog, @entry, comment), method: :delete, data: { confirm: 'Are you sure?' }
 %br/
 
