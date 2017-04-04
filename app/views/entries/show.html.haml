@@ -23,11 +23,12 @@
   %tbody
     - @entry.comments.each do |comment|
       %tr
-        %td= comment.body
         - if comment.approved?
+          %td= comment.body
           %td
         - else
-          %td= link_to "#{comment.status}", approve_blog_entry_comment_path(@blog, @entry, comment), method: :get
+          %td (非表示)
+          %td= link_to "Approve", approve_blog_entry_comment_path(@blog, @entry, comment), method: :get
         %td= link_to 'Destroy', blog_entry_comment_path(@blog, @entry, comment), method: :delete, data: { confirm: 'Are you sure?' }
 %br/
 
