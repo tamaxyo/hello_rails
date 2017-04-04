@@ -3,7 +3,7 @@ Rails.application.routes.draw do
     resources :entries do
       resources :comments, :only => [:create, :destroy] do
         member do
-          get :approve
+          put :approve
         end
       end
     end
