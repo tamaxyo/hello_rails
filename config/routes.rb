@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :blogs do
     resources :entries do
-      resources :comments do
+      resources :comments, :only => [:create, :destroy] do
         member do
           get :approve
         end
