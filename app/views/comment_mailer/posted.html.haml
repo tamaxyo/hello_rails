@@ -9,3 +9,5 @@
   %br/
   Comment: #{@comment.body}
   %br/
+  - link = url_for [@blog, @entry]
+  URL: <a href=#{link}>#{link}</a>
