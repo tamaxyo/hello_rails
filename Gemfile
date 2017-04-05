@@ -56,6 +56,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 group :development do
   gem 'hirb'
   gem 'hirb-unicode'
+  gem 'letter_opener'
 end
 
 # Use haml for template engine
