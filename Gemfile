@@ -61,3 +61,7 @@ end
 
 # Use haml for template engine
 gem 'haml-rails'
+
+group :development, :test do
+  gem 'rspec-rails'
+end
