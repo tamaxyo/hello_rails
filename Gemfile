@@ -65,6 +65,7 @@ gem 'haml-rails'
 group :development, :test do
   gem 'rspec-rails'
   gem 'rails-controller-testing'
+  gem 'capybara'
 end
 
 group :development do
