@@ -7,14 +7,14 @@ class CommentMailer < ApplicationMailer
   #   en.comment_mailer.posted.subject
   #
 
-  default from: "noreply@example.com"
+  default from: ENV['MAIL_FROM']
   
   def posted(comment)
     @comment = comment
     @entry = @comment.entry
     @blog = @entry.blog
 
-    mail(to: "admin@example.com",
+    mail(to: ENV['MAIL_TO'],
          subject: "新しいコメントが投稿されました")
   end
 end
